@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko
+spec:
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
+    args:
+      - "--context=git://github.com/ssuji15/library-frontend"
+      - "--destination=registry:5000/frontend:latest"
+      - "--insecure"
+      - "--skip-tls-verify"
+  restartPolicy: Never
