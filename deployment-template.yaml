@@ -4,18 +4,18 @@ metadata:
   name: frontend-VERSION
   labels:
     app: frontend
-    version: VERSION
+    version: "VERSION"
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: frontend
-      version: VERSION
+      version: "VERSION"
   template:
     metadata:
       labels:
         app: frontend
-        version: VERSION
+        version: "VERSION"
     spec:
       containers:
       - name: frontend
